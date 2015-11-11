@@ -1,6 +1,6 @@
 function statevec = parsestates(vec)
-% PARSEOUTPUT - This function parses a vector of Hidden Markov Model states
-% and assigns a letter H or L to each state.
+% PARSESTATES - This function parses a numerical vector of Hidden Markov 
+% Model states and assigns a letter H or L to each state.
 %   1 = "H"
 %   2 = "L"
 %
@@ -19,7 +19,7 @@ for iii=1:length(vec)
     try
         statevec(iii) = map(vec(iii));
     catch
-        error(['Invalid state sequence! The letter at index ' int2str(iii) ' is not one of the following: H, L.'])
+        error(['Invalid state sequence! The integer at index ' int2str(iii) ' is not one of the following: 1, 2.'])
     end
 end
 
